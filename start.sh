@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 4
+
 FILE=/user-data/installed.txt
 
 if [ -f "$FILE" ]; then
@@ -31,7 +33,7 @@ else
 
     if [[ -z $GG_THING_NAME ]]; then
         echo "You must set GG_THING_NAME before this device can be provisioned!"
-    requirements=False
+        requirements=False
     else
         echo "Found GG_THING_NAME value $GG_THING_NAME."
     fi
@@ -40,7 +42,7 @@ else
 
     # (starting in /usr/src)
 
-    if [ requirements = "True" ]
+    if [ $requirements == "True" ]
     then
         echo "STARTING INSTALL..."
     
@@ -71,8 +73,6 @@ if [ -f "$FILE" ]; then
 else
     echo "Software is not installed..."
 fi
-
-
 
 
 

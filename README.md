@@ -3,7 +3,7 @@ Create an "AWS IoT Thing" (a Greengrass core device) that runs on balenaOS.
 
 ## Getting started
 
-You'll need an AWS account and an AWS Identity and Access Management (IAM) user with administrator permissions (See [this section](https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started-prerequisites.html) for more details. 
+You'll need an AWS account and an AWS Identity and Access Management (IAM) user with administrator permissions (See [this section](https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started-prerequisites.html) for more details.)
 
 You'll also need a balena account (the first 10 devices are free and full-featured) by signing up [here](https://dashboard.balena-cloud.com/signup).
 
@@ -11,7 +11,7 @@ Then, follow these steps:
 
 1. Create a new fleet in your balenaCloud dashboard, and add a new device to the fleet.
 
-2. Set the following [device variables](https://docs.balena.io/learn/manage/variables/) for your AWS IoT Thing in the balenaCloud dashboard (do this before pushing any code to your fleet!):
+2. Set the following [device variables](https://docs.balena.io/learn/manage/variables/) for your AWS IoT Thing in the balenaCloud dashboard:
 
 - `AWS_REGION` such as `us-east-1` or whichever is used for your devices (usually seen in the upper right of your AWS dashboard)
 

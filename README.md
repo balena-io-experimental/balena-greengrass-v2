@@ -31,4 +31,4 @@ Once you have pushed this code to your device, it will use the variables you hav
 
 - Download and run the AWS IoT Greengrass installer on the device (in a container) that provisions the Greengrass core device as an AWS IoT thing with a device certificate and default permissions.
 
-When the installer completes, you can find your device in the list of Greengrass core devices on the AWS Core devices page. You can then use the AWS IoT Greengrass consoleto deploy a component (such as a Lambda function) to the target device.
+When the installer completes, you can find your device in the list of Greengrass core devices on the AWS Core devices page. You can then use the AWS IoT Greengrass console to deploy a component (such as a Lambda function) to the target device.

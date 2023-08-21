@@ -1,0 +1,19 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-ubuntu:focal-20230712
+
+ENV DEBIAN_FRONTEND noninteractive
+
+WORKDIR /usr/src
+
+RUN apt update && apt install -y wget software-properties-common unzip
+
+# Install Corretto, an Amazon distro of OpenJDK
+
+RUN  wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add - && \
+     add-apt-repository 'deb https://apt.corretto.aws stable main' && \
+     apt-get update && apt-get install -y java-11-amazon-corretto-jdk
+
+# Download the AWS IoT Greengrass Core software
+
+RUN curl -s https://d2s8p88vqu9w66.cloudfront.net/releases/greengrass-nucleus-latest.zip > greengrass-nucleus-latest.zip && unzip greengrass-nucleus-latest.zip -d GreengrassInstaller
+
+CMD ["bash", "start.sh"]

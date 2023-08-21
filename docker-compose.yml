@@ -1,0 +1,10 @@
+version: "2.1"
+volumes:
+    user-data:
+services:
+  greengrass:
+    build: .
+    restart: unless-stopped
+    privileged: true
+    volumes:
+       - 'user-data:/user-data'

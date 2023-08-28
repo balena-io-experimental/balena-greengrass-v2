@@ -1,6 +1,7 @@
 version: "2.1"
 volumes:
     user-data:
+    user-gg:
 services:
   greengrass:
     build: .
@@ -8,3 +9,4 @@ services:
     privileged: true
     volumes:
        - 'user-data:/user-data'
+       - 'user-gg:/greengrass'

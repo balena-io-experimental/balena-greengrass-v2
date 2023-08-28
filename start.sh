@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 4
+sleep 6
 
 FILE=/user-data/installed.txt
 
@@ -45,7 +45,10 @@ else
     if [ $requirements == "True" ]
     then
         echo "STARTING INSTALL..."
-    
+        
+        # Set flag to let us know this was provisioned
+        touch "$FILE"
+        
         if [[ -z $GG_GROUP_NAME ]]; then
             echo "No GG_GROUP_NAME provided; not adding thing to an existing group."
             java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassInstaller/lib/Greengrass.jar --aws-region "$AWS_REGION" --thing-name "$GG_THING_NAME" --component-default-user ggc_user:ggc_group --provision true --setup-system-service false --deploy-dev-tools true
@@ -54,9 +57,8 @@ else
             java -Droot="/greengrass/v2" -Dlog.store=FILE -jar ./GreengrassInstaller/lib/Greengrass.jar --aws-region "$AWS_REGION" --thing-name "$GG_THING_NAME" --thing-group-name "$GG_GROUP_NAME" --component-default-user ggc_user:ggc_group --provision true --setup-system-service false --deploy-dev-tools true
         fi
         
-        # Set flag to let us know this was provisioned
-        touch "$FILE"
-    
+        # Setting flag would be better here but it never seems to reach this line
+        
     else
         echo "NOT installing software - requirements not met - see above..."
         
@@ -73,7 +75,5 @@ if [ -f "$FILE" ]; then
 else
     echo "Software is not installed..."
 fi
-
-
 
 

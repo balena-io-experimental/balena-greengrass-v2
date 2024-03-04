@@ -9,9 +9,11 @@ You'll also need a balena account (the first 10 devices are free and full-featur
 
 Then, follow these steps:
 
-1. Create a new fleet in your balenaCloud dashboard, and add a new device to the fleet.
+1. Click Deploy with balena and create a new fleet in your balenaCloud dashboard. Then add a new device to the fleet.
 
-2. Set the following [device variables](https://docs.balena.io/learn/manage/variables/) for your AWS IoT Thing in the balenaCloud dashboard:
+[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/balena-io-experimental/balena-greengrass-v2)
+
+2. Once the device is online, set the following [device variables](https://docs.balena.io/learn/manage/variables/) for your AWS IoT Thing in the balenaCloud dashboard:
 
 - `AWS_REGION` such as `us-east-1` or whichever is used for your devices (usually seen in the upper right of your AWS dashboard)
 
